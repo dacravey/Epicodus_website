@@ -41,11 +41,11 @@ class LessonsController < ApplicationController
     flash[:notice] = "Lesson successfully deleted!"
     redirect_to lessons_path
   end
-  
+
 
 private
 
   def lesson_params
-    params.require(:lesson).permit(:title, :body)
+    params.require(:lesson).permit(:title, :body, :order_number)
   end
 end
