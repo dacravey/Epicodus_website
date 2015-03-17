@@ -26,10 +26,10 @@ class LessonsController < ApplicationController
   end
 
   def update
-    lesson = Lesson.find(params[:id])
-    if lesson.update(lesson_params)
+    @lesson = Lesson.find(params[:id])
+    if @lesson.update(lesson_params)
       flash[:notice] = "Lesson successfully updated!"
-      redirect_to lesson_path(lesson)
+      redirect_to lesson_path(@lesson)
     else
       render :edit
     end
@@ -41,6 +41,7 @@ class LessonsController < ApplicationController
     flash[:notice] = "Lesson successfully deleted!"
     redirect_to lessons_path
   end
+  
 
 private
 
