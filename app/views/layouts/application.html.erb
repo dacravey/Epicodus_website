@@ -2,13 +2,21 @@
 <html>
 <head>
   <title>LearnHowToProgram</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container">
+    <nav class="main-nav">
+      <ul class="list-unstyled">
+        <li><span class="site-title">Learn How to Program</span></li>
+        <li>Lessons</li>
+        <li>Add Lesson</li>
+      </ul>
+    </nav>
+    <%= yield %>
+  </div>
 </body>
 </html>

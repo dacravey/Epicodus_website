@@ -1,0 +1,6 @@
+<h2>Lessons</h2>
+<ul class="list-unstyled">
+  <% @lessons.each do |lesson| %>
+    <li><%= link_to lesson.title, lesson_path(lesson) %></li>
+  <% end %>
+</ul>
