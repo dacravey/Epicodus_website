@@ -1,3 +1,9 @@
-<h2><%= @lesson.title %></h2>
+<nav class="main-nav">
+  <ul class="list-unstyled">
+    <li><span class="lesson-title"><%= @lesson.title %></span></li>
+    <li><%= link_to "Edit", edit_lesson_path(@lesson) %></li>
+    <li><%= link_to "Delete", lesson_path(@lesson), data: {confirm: "are you sure?", method: "delete"} %></li>
+  </ul>
+</nav>
 
 <p><%= @lesson.body %></p>

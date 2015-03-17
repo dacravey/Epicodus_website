@@ -21,6 +21,27 @@ class LessonsController < ApplicationController
     end
   end
 
+  def edit
+    @lesson = Lesson.find(params[:id])
+  end
+
+  def update
+    lesson = Lesson.find(params[:id])
+    if lesson.update(lesson_params)
+      flash[:notice] = "Lesson successfully updated!"
+      redirect_to lesson_path(lesson)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    lesson = Lesson.find(params[:id])
+    lesson.destroy
+    flash[:notice] = "Lesson successfully deleted!"
+    redirect_to lessons_path
+  end
+
 private
 
   def lesson_params
