@@ -3,6 +3,7 @@
     <li><span class="lesson-title"><%= @lesson.title %></span></li>
     <li><%= link_to "Edit", edit_lesson_path(@lesson) %></li>
     <li><%= link_to "Delete", lesson_path(@lesson), data: {confirm: "are you sure?", method: "delete"} %></li>
+    <li><%= link_to "Next", lesson_path(@lesson.next) %></li>
   </ul>
 </nav>
 
